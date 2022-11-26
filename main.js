@@ -41,13 +41,15 @@ bagHeader.appendChild(bagHeading);
 
 let subTotal = document.createElement('h3');
 subTotal.className = 'sub-total';
-subTotal.innerHTML = 'Subtotal: $'
 bagHeader.appendChild(subTotal);
 
 let confirm = document.createElement('button');
 confirm.className = 'confirm';
 confirm.innerHTML = 'Confirm Order'
 bagHeader.appendChild(confirm);
+
+let total = 0;
+sum(total);
 
 // Header Section 
 
@@ -192,8 +194,14 @@ function addBooks(book) {
     bagMain.removeChild(cartBook);
   });
 
+  deleteBook.addEventListener("click", () => {
+    sum(-book.price);
+  });
+
   let cartBook = document.createElement('div');
   cartBook.className = 'cart-book';
+
+  sum(book.price);
 
   cartBook.appendChild(image);
   bookInformation.appendChild(bookTitle);
@@ -204,6 +212,13 @@ function addBooks(book) {
 
   bagMain.appendChild(cartBook);
 }
+
+function sum(amount) {
+  total = total + amount;
+  let subTotalSum = total;
+  subTotal.innerHTML = 'Subtotal: $' + subTotalSum;
+}
+
 // Footer Section 
 let footerContainer = document.createElement('div');
 let footerGithub = document.createElement('a');
