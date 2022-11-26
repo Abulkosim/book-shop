@@ -35,11 +35,14 @@ main {
   padding: 60px 100px;
 }
 
+.books-container {
+  width: 70%;
+}
+
 .book-container {
   display: flex;
   padding-bottom: 30px;
   margin-bottom: 30px;
-  width: 70%;
   border-bottom: 1px solid lightgray;
 }
 
@@ -94,7 +97,65 @@ main {
   box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+/* ShowMore container */
+.show-more-container {
+  position: fixed;
+  width: 40%;
+  padding: 20px 30px 30px;
+  border: 1px solid gray;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  z-index: 10;
+  background-color: black;
+  color: white;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
+.show-more-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid white;
+  align-items: center;
+}
+
+.heading {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.close-button {
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.close-button:hover {
+  color: white;
+  background: black;
+}
+
+.show-more-title {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.show-more-writer {
+  margin-bottom: 10px;
+}
+
+.show-more-description {
+  line-height: 1.25;
+  text-align: justify;
+}
 /* Footer */
 
 footer {

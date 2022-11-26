@@ -13,6 +13,14 @@ let header = document.createElement('header');
 let main = document.createElement('main');
 let footer = document.createElement('footer');
 
+let booksContainer = document.createElement('div');
+let bagContainer = document.createElement('div');
+booksContainer.className = 'books-container';
+bagContainer.className = 'bag-container';
+
+main.appendChild(booksContainer);
+main.appendChild(bagContainer);
+
 container.appendChild(header);
 container.appendChild(main);
 container.appendChild(footer);
@@ -78,7 +86,62 @@ function ourBooks(books) {
     bookContainer.appendChild(image);
     bookContainer.appendChild(bookInformation);
 
-    main.appendChild(bookContainer)
+
+    booksContainer.appendChild(bookContainer)
+
+    // Show More
+    let showMoreContainer = document.createElement('div');
+
+    let showMoreHeader = document.createElement('div');
+    let showMoreMain = document.createElement('div');
+
+    showMoreContainer.className = 'show-more-container';
+    showMoreHeader.className = 'show-more-header';
+    showMoreMain.className = 'show-more-main';
+
+    let heading = document.createElement('h2');
+    let closeButton = document.createElement('button');
+
+    heading.className = 'heading';
+    closeButton.className = 'close-button';
+
+    heading.innerHTML = 'Details';
+    closeButton.innerHTML = '&times;'
+
+    let showMoreTitle = document.createElement('p');
+    let showMoreWriter = document.createElement('p');
+    let showMoreDescription = document.createElement('p');
+
+    showMoreTitle.className = 'show-more-title';
+    showMoreWriter.className = 'show-more-writer';
+    showMoreDescription.className = 'show-more-description';
+
+    showMoreTitle.innerHTML = book.title;
+    showMoreWriter.innerHTML = 'By ' + book.author;
+    showMoreDescription.innerHTML = book.description;
+
+    showMoreHeader.appendChild(heading);
+    showMoreHeader.appendChild(closeButton);
+    showMoreMain.appendChild(showMoreTitle);
+    showMoreMain.appendChild(showMoreWriter);
+    showMoreMain.appendChild(showMoreDescription);
+    showMoreContainer.appendChild(showMoreHeader);
+    showMoreContainer.appendChild(showMoreMain);
+
+
+
+    showMore.addEventListener('click', () => {
+      body.appendChild(showMoreContainer);
+    })
+
+    closeButton.addEventListener('click', () => {
+      body.removeChild(showMoreContainer);  
+    })
+
+
+
+
+
   })
 }
 
