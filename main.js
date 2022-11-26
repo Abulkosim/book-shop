@@ -14,16 +14,40 @@ let main = document.createElement('main');
 let footer = document.createElement('footer');
 
 let booksContainer = document.createElement('div');
-let bagContainer = document.createElement('div');
 booksContainer.className = 'books-container';
-bagContainer.className = 'bag-container';
-
 main.appendChild(booksContainer);
-main.appendChild(bagContainer);
 
 container.appendChild(header);
 container.appendChild(main);
 container.appendChild(footer);
+
+// Bag Section 
+let bagContainer = document.createElement('div');
+bagContainer.className = 'bag-container';
+main.appendChild(bagContainer);
+
+let bagHeader = document.createElement('div');
+bagHeader.className = 'bag-header';
+bagContainer.appendChild(bagHeader);
+
+let bagMain = document.createElement('div');
+bagMain.className = 'bag-main';
+bagContainer.appendChild(bagMain);
+
+let bagHeading = document.createElement('h2');
+bagHeading.className = 'bag-heading';
+bagHeading.innerHTML = 'Shopping Cart';
+bagHeader.appendChild(bagHeading);
+
+let subTotal = document.createElement('h3');
+subTotal.className = 'sub-total';
+subTotal.innerHTML = 'Subtotal: $'
+bagHeader.appendChild(subTotal);
+
+let confirm = document.createElement('button');
+confirm.className = 'confirm';
+confirm.innerHTML = 'Confirm Order'
+bagHeader.appendChild(confirm);
 
 // Header Section 
 
@@ -74,6 +98,8 @@ function ourBooks(books) {
     let addBag = document.createElement('button');
     addBag.className = 'add-bag';
     addBag.innerHTML = 'Add to Bag';
+
+    addBag.addEventListener("click", () => addBooks(book));
 
     buttons.appendChild(showMore);
     buttons.appendChild(addBag);
@@ -128,23 +154,56 @@ function ourBooks(books) {
     showMoreContainer.appendChild(showMoreHeader);
     showMoreContainer.appendChild(showMoreMain);
 
-
-
     showMore.addEventListener('click', () => {
       body.appendChild(showMoreContainer);
     })
 
     closeButton.addEventListener('click', () => {
-      body.removeChild(showMoreContainer);  
+      body.removeChild(showMoreContainer);
     })
-
-
-
-
-
   })
 }
 
+function addBooks(book) {
+  let image = document.createElement('img')
+  image.className = 'book-image';
+  image.src = book.imageLink;
+
+  let bookInformation = document.createElement('div');
+  bookInformation.className = 'book-information';
+
+  let bookTitle = document.createElement('p');
+  bookTitle.className = 'book-title';
+  bookTitle.innerHTML = book.title;
+
+  let bookWriter = document.createElement('p');
+  bookWriter.className = 'book-writer';
+  bookWriter.innerHTML = 'By ' + book.author;
+
+  let bookPrice = document.createElement('p');
+  bookPrice.className = 'book-price';
+  bookPrice.innerHTML = '$' + book.price;
+
+  let deleteBook = document.createElement('button');
+  deleteBook.className = 'delete-book';
+  deleteBook.innerHTML = '&times;';
+
+  deleteBook.addEventListener("click", () => {
+    bagMain.removeChild(cartBook);
+  });
+
+  let cartBook = document.createElement('div');
+  cartBook.className = 'cart-book';
+
+  cartBook.appendChild(image);
+  bookInformation.appendChild(bookTitle);
+  bookInformation.appendChild(bookWriter);
+  bookInformation.appendChild(bookPrice);
+  cartBook.appendChild(bookInformation);
+  cartBook.appendChild(deleteBook);
+
+  bagMain.appendChild(cartBook);
+}
 // Footer Section 
 let footerContainer = document.createElement('div');
 let footerGithub = document.createElement('a');
