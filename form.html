@@ -1,0 +1,76 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Form</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <div class="header-container"><a class="header-link" href="https://abulkosim.github.io/book-shop">BOOKSTORE</a>
+      </div>
+    </header>
+
+    <main>
+      <form action="">
+        <div class="form-container">
+          <h1>Shopping Details</h1>
+
+          <div>
+            <label for="name" class="label">NAME</label>
+            <input type="text" min="4" required id="name" placeholder="Enter Your Name">
+          </div>
+          <div>
+            <label for="surname" class="label">SURNAME</label>
+            <input type="text" min="5" required id="surname" placeholder="Enter Your Surname">
+          </div>
+          <div>
+            <label for="delivery-date" class="label">DELIVERY DATE</label>
+            <input type="date" name="delivery-date" id="delivery-date" required>
+          </div>
+          <div>
+            <label for="street-name" class="label">STREET NAME</label>
+            <input type="text" min="5" name="street-name" id="street-name" required
+              placeholder="Enter Your Street Name">
+          </div>
+          <div>
+            <label for="house-number" class="label">HOUSE NUMBER</label>
+            <input type="number" id="house-number" required placeholder="Enter Your House Number">
+          </div>
+          <div>
+            <label for="flat-number" class="label">FLAT NUMBER</label>
+            <input type="number" id="flat-number" required placeholder="Enter Your Flat Number">
+          </div>
+          <div class="payment-type">
+            <h3>PAYMENT TYPE</h3>
+            <div class="payment-type-section">
+              <div>
+                <input type="radio" id="payment-type-cash" name="payment-type-radio">
+                <label for="payment-type-cash">CASH</label>
+              </div>
+              <div>
+                <input type="radio" id="payment-type-card" name="payment-type-radio">
+                <label for="payment-type-card">CARD</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <div class="footer-container"><a href="https://github.com/Abulkosim"><i class="fa-brands fa-github"></i>
+          GitHub</a>
+        <div>© 2022</div><a class="footer-rs" href="https://rs.school/"><img
+            src="https://rollingscopes.com/images/logo_rs_text.svg" alt="RS-School"></a>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
