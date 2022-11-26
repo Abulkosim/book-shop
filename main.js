@@ -43,10 +43,15 @@ let subTotal = document.createElement('h3');
 subTotal.className = 'sub-total';
 bagHeader.appendChild(subTotal);
 
+let confirmLink = document.createElement('a');
 let confirm = document.createElement('button');
+confirmLink.className = 'confirm-link'
 confirm.className = 'confirm';
-confirm.innerHTML = 'Confirm Order'
-bagHeader.appendChild(confirm);
+confirm.innerHTML = 'Confirm Order';
+
+confirmLink.appendChild(confirm);
+confirmLink.href = './form.html';
+bagHeader.appendChild(confirmLink); 
 
 let total = 0;
 sum(total);
