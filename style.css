@@ -312,7 +312,7 @@ form .label {
   margin-left: 10px;
 }
 
-form input[type='text'], 
+form input[type='text'],
 form input[type='date'],
 form input[type='number'] {
   display: block;
@@ -354,8 +354,48 @@ form input[type='number'] {
   color: #333;
 }
 
-.payment-type-section radio {
-  outline: none;
+.cash,
+.card {
+  display: flex;
+  align-items: center;
 }
 
+.payment-type-section input[type='radio'] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: 5px;
+  border: 2px solid black;
+}
 
+.payment-type-section input[type='radio']:checked {
+  background: black;
+  transition: all ease-in 0.2s;
+}
+
+.complete {
+  border: none;
+  border: 1px solid black;
+  color: black;
+  background: white;
+  font-size: 20px;
+  letter-spacing: 2px;
+  padding: 15px 30px;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: block;
+  border-radius: 5px;
+  background: linear-gradient(to right, black 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .5s ease-out;
+}
+
+.complete:hover {
+  color: white;
+  background-position: left bottom;
+
+
+
+}
