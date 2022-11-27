@@ -395,7 +395,9 @@ form input[type='number'] {
 .complete:hover {
   color: white;
   background-position: left bottom;
+}
 
-
-
+.to-complete:invalid {
+  border: 1px solid red;
+  box-shadow: 0 0 4px 0px rgb(253, 147, 147);
 }
