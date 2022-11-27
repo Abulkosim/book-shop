@@ -23,11 +23,11 @@
 
           <div>
             <label for="name" class="label">NAME</label>
-            <input type="text" min="4" required id="name" placeholder="Enter Your Name">
+            <input type="text" min="4" required id="name" placeholder="Enter Your Name" pattern="[A-Za-z]{4}">
           </div>
           <div>
             <label for="surname" class="label">SURNAME</label>
-            <input type="text" min="5" required id="surname" placeholder="Enter Your Surname">
+            <input type="text" min="5" required id="surname" placeholder="Enter Your Surname" pattern="[A-Za-z]{5}">
           </div>
           <div>
             <label for="delivery-date" class="label">DELIVERY DATE</label>
@@ -35,16 +35,16 @@
           </div>
           <div>
             <label for="street-name" class="label">STREET NAME</label>
-            <input type="text" min="5" name="street-name" id="street-name" required
-              placeholder="Enter Your Street Name">
+            <input type="text" min="5" name="street-name" id="street-name" required placeholder="Enter Your Street Name"
+              pattern="[1-9/A-Za-z]{5}">
           </div>
           <div>
             <label for="house-number" class="label">HOUSE NUMBER</label>
-            <input type="number" id="house-number" required placeholder="Enter Your House Number">
+            <input type="number" id="house-number" required placeholder="Enter Your House Number" pattern="[1-9]">
           </div>
           <div>
             <label for="flat-number" class="label">FLAT NUMBER</label>
-            <input type="number" id="flat-number" required placeholder="Enter Your Flat Number">
+            <input type="number" id="flat-number" required placeholder="Enter Your Flat Number" pattern="[0-9/-]+">
           </div>
           <div class="payment-type">
             <h3>PAYMENT TYPE</h3>
@@ -60,7 +60,7 @@
             </div>
           </div>
 
-          <button class="complete">COMPLETE</button>
+          <button class="complete" type="submit" disabled>COMPLETE</button>
         </div>
       </form>
     </main>
