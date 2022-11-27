@@ -1,0 +1,403 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Header */
+
+header {
+  background-color: black;
+}
+
+.header-container {
+  width: 1024px;
+  margin: 0 auto;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-link {
+  color: white;
+  font-size: 48px;
+  letter-spacing: 8px;
+  text-decoration: none;
+}
+
+/* Main */
+main {
+  padding: 60px 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.books-container {
+  width: 60%;
+}
+
+.book-container {
+  display: flex;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid lightgray;
+}
+
+.book-container:last-child {
+  border-bottom: none;
+}
+
+.book-image {
+  width: 190px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+}
+
+.book-information {
+  padding: 20px 40px;
+}
+
+.book-title {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.book-writer {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.book-price {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.show-more,
+.add-bag {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.show-more:hover,
+.add-bag:hover {
+  background-color: rgb(75, 75, 75);
+  transition: 0.5s;
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* ShowMore container */
+.show-more-container {
+  position: fixed;
+  width: 40%;
+  padding: 20px 30px 30px;
+  border: 1px solid gray;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  z-index: 10;
+  background-color: black;
+  color: white;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.show-more-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid white;
+  align-items: center;
+}
+
+.heading {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.close-button {
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.close-button:hover {
+  color: white;
+  background: black;
+}
+
+.show-more-title {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.show-more-writer {
+  margin-bottom: 10px;
+}
+
+.show-more-description {
+  line-height: 1.25;
+  text-align: justify;
+}
+
+/* Cart Section */
+.bag-container {
+  width: 37%;
+  background: black;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.bag-heading {
+  font-weight: 500;
+  font-size: 28px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.confirm {
+  border: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  margin: 15px 0;
+  background: white;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.confirm:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px 0 rgba(104, 104, 104);
+}
+
+.sub-total {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.bag-main {
+  background: white;
+  color: black;
+  height: 95%;
+  padding: 10px 15px;
+  overflow-y: auto;
+}
+
+.cart-book {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+.cart-book .book-image {
+  width: 120px;
+}
+
+.cart-book .book-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.cart-book .book-information {
+  padding: 0;
+  margin: 0 10px;
+}
+
+.cart-book .book-writer {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.cart-book .book-price {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.delete-book {
+  border: none;
+  background: black;
+  padding: 5px 10px;
+  font-weight: 600;
+  font-size: 18px;
+  color: white;
+  align-self: flex-start;
+}
+
+.delete-book:hover {
+  background: #333;
+  cursor: pointer;
+}
+
+/* Footer */
+
+footer {
+  background-color: black;
+  color: white;
+  height: 90px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-container {
+  width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  align-items: center;
+}
+
+.footer-rs img {
+  width: 72px;
+  height: 72px;
+}
+
+
+/* Form Page */
+.main {
+  background-color: #E6E6E6;
+}
+
+form {
+  background: white;
+  width: 920px;
+  border-radius: 10px;
+  padding: 50px 60px;
+  margin: 10px auto;
+}
+
+form h1 {
+  display: block;
+  width: 100%;
+  font-size: 40px;
+  color: #333;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+form .label {
+  font-size: 22px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  margin-left: 10px;
+}
+
+form input[type='text'],
+form input[type='date'],
+form input[type='number'] {
+  display: block;
+  width: 100%;
+  outline: none;
+  margin-bottom: 30px;
+  background-color: #F7F7F7;
+  border-radius: 5px;
+  border: 1px solid #E6E6E6;
+  font-size: 20px;
+  padding: 15px;
+}
+
+.payment-type {
+  text-align: center
+}
+
+.payment-type h3 {
+  font-size: 22px;
+  font-weight: 600;
+  display: block;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.payment-type-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 30%;
+}
+
+.payment-type-cash {
+  margin-right: 20px;
+}
+
+.payment-type-section label {
+  font-size: 20px;
+  color: #333;
+}
+
+.cash,
+.card {
+  display: flex;
+  align-items: center;
+}
+
+.payment-type-section input[type='radio'] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: 5px;
+  border: 2px solid black;
+}
+
+.payment-type-section input[type='radio']:checked {
+  background: black;
+  transition: all ease-in 0.2s;
+}
+
+.complete {
+  border: none;
+  border: 1px solid black;
+  color: black;
+  background: white;
+  font-size: 20px;
+  letter-spacing: 2px;
+  padding: 15px 30px;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: block;
+  border-radius: 5px;
+  background: linear-gradient(to right, black 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .5s ease-out;
+}
+
+.complete:hover {
+  color: white;
+  background-position: left bottom;
+}
+
+.to-complete:invalid {
+  border: 1px solid red;
+  box-shadow: 0 0 4px 0px rgb(253, 147, 147);
+}
